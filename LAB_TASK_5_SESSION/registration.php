@@ -1,75 +1,66 @@
+<?php
+	session_start();
+?>
 <html>
 	<head></head>
-	<FORM method="POST" action="b.php">
+	<FORM method="POST">
 		<body>
 				<fieldset>
-				XCompany&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<a href="home.php" align="right">Home</a>|
+				XCompany
+				<h4 align="right"><a href="public_home.html" align="right">Home</a>|
 				<a href="login.php">Login</a>|
-				<a href="Registartion.php">Registartion</a>
+				<a href="registration.php">Registartion</a>
+				</h4>
 					<fieldset>
 					<fieldset>
 				<legend>REGISTRATION</LEGEND>
 					Name:
-					<input type="text" name="name" value=""><br>________________________<br>
-					Email
-					<input type="Email" name="name" value=""><br>________________________<br>
+					<input type="text" name="name" value="munna"><br>________________________<br>
+					Email:
+					<input type="Email" name="email" value="munnagalaxya7@gmail.com"><br>________________________<br>
+					User Name:
+					<input type="text" name="userName" value="munnahm"><br>________________________<br>
+					Password:
+					<input type="password" name="password" value="123"><br>________________________<br>
+					Confirm Password:
+					<input type="password" name="comPassword" value="123"><br>________________________<br>
 					
 				
-				<!--3-->
-					Gender
+				<!--3--><fieldset>
+				<legend>Gender</legend>
 					
-						<input type="radio" name="gender" value="">Male
-						<input type="radio" name="gender" value="">Female
-						<input type="radio" name="gender" value="">Other<br>________________________<br>
-					
-					
-				
-				<!--4-->
-					Date of Birth
-					
-						<input type="number" name="dd" value="" size="100px">/
-						<input type="number" name="mm" value="" size="2px">/
-						<input type="number" name="yyyy" value="" size="4px">
-						(dd/mm/yyyy)
+						<input type="radio" name="gender" value="Male">Male
+						<input type="radio" name="gender" value="Female">Female
+						<input type="radio" name="gender" value="Other">Other
+						</fieldset>
 						<br>________________________<br>
 					
 					
 				
-				<!--5-->
-					Blood Group
+				<!--4-->
+					<fieldset>
+				<legend>Date of Birth</legend>
 					
-						<select>
-							<option name="">A+</option>
-							<option name="">B+</option>
-							<option name="">AB+</option>
-							<option name="">O+</option>
-							<option name="">A-</option>
-							<option name="">B-</option>
-							<option name="">AB-</option>
-							<option name="">O-</option>
-						</select><br>________________________<br>
+						<input type="number" name="dd" value="22" size="100px">/
+						<input type="number" name="mm" value="08" size="2px">/
+						<input type="number" name="yy" value="99" size="4px">
+						(dd/mm/yyyy)
+						</fieldset>
+						<br>________________________<br>
+						
 					
-					
-				
-				<!--6-->
-					Degree
-					
-						<input type="checkBox" name="Degree" value="">SSC
-						<input type="checkBox" name="Degree" value="">HSC
-						<input type="checkBox" name="Degree" value="">BSc
-						<input type="checkBox" name="Degree" value="">MSc<br>________________________<br>
-					
-					
-				
-				<!--7-->
-					Photo
-					Picture<input type="file" name="picture" value=""><br>________________________<br>
-				
 				<!--9-->
-						<input type="Submit" name="Submit">
+						<input type="Submit" name="submit">
 						<input type="reset" name="Reset"><br>
-					
+						<?php
+						if(isset($_POST['submit']))
+						{
+							$_SESSION['user']=array("name"=>$_POST['name'],"email"=>$_POST['email'],"userName"=>$_POST['userName'],"password"=>$_POST['password'],"comPassword"=>$_POST['comPassword'],"gender"=>$_POST['gender'],"dd"=>$_POST['dd'],"mm"=>$_POST['mm'],"yy"=>$_POST['yy']);
+							//echo $_POST['name'];
+							echo $_SESSION['user']['name'];
+						}
+						?>
+
 				
 			</fieldset>
 
