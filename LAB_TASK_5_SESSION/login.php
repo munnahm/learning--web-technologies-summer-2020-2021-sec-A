@@ -1,12 +1,16 @@
+<?php 
+session_start();
+$_SESSION['flag']=0;
+?>
 <html>
 	<head></head>
-	<FORM method="POST" action="b.php">
+	<FORM method="POST" action="checkLogin.php">
 		<body>
 				<fieldset>
-				XCompany&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<a href="home.php" align="right">Home</a>|
+				XCompany<h4 align="right"><a href="public_home.html" align="right">Home</a>|
 				<a href="login.php">Login</a>|
-				<a href="Registartion.php">Registartion</a>
+				<a href="registration.php">Registartion</a>
+				</h4>
 					<fieldset>
 					<fieldset>
 				<legend>LOGIN</LEGEND>
@@ -25,6 +29,7 @@
 				
 						<!--9-->
 						<input type="Submit" name="Submit">
+						<a href="forgetPassword.php">Forget Password?</a>
 						<br>
 					
 				
