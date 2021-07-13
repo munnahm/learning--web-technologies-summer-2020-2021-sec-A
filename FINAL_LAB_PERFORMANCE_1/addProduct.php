@@ -24,12 +24,14 @@
 if(isset($_POST['submit']))
 {
 	$conn = new mysqli('localhost','root','','product_db');
-	echo $_POST['name'];
+	//echo $_POST['name'];
 	$name=$_POST['name'];
 	$sp=$_POST['sprice'];
 	$bp=$_POST['bprice'];
-	$sql="INSERT INTO products(name,bprice,sprice) VALUES ('{$name}','{$bp}','{$sp}')";
+	$id=rand();
+	$sql="INSERT INTO products(name,bprice,sprice,id) VALUES ('{$name}','{$bp}','{$sp}',{$id})";
 	$s=mysqli_query($conn,$sql);
-	echo $s;
+	
+	//echo $s;
 }
 ?>
