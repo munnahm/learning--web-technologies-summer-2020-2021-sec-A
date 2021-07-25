@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Degree</legend>
+
+			<input type="checkbox" id="d1" name="gender">SSC
+			<input type="checkbox" id="d2" name="gender">HSC
+			<input type="checkbox" id="d3" name="gender">BSc
+			<br><br>
+			
+		</fieldset>
+		<input type="submit" name="submit" onclick="Validation()">
+		<script>
+			function Validation()
+			{
+				//let s=document.getElementById('gender').checked;
+				if(!document.getElementById('d1').checked && !document.getElementById('d2').checked && !document.getElementById('d3').checked)
+				{
+					alert("Select Degree At First!");
+				}
+			}
+		</script>
+	</form>
+</body>
+</html>

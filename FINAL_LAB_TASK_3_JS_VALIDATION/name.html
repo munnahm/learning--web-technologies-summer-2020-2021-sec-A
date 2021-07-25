@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		Name<br>
+		<input type="text" id="name"><br><br>
+		<input type="submit" name="submit" onclick="nameValidation()">
+		<script>
+			function chAlpha(s)
+			{
+				for(let i=0;i<s.length;i++){
+					if(s[i].charCodeAt(0)>64 &&s[i].charCodeAt(0)<91 || s[i].charCodeAt(0)>96 &&s[i].charCodeAt(0)<123 || s[i]=='.' || s[i]=='-'){
+					if(i==0){
+						alert("Alphabet or . or - Not Accepted Here!");
+						break;
+					}
+					if(i==0){
+						alert("Name Must Be Start With Letter!");
+						break;
+					}
+					//console.log(parseInt(s[i]));
+				}
+			}
+			}
+			function nameValidation()
+			{
+				let s=document.getElementById('name').value;
+				if(s=="")
+				{
+					alert("Name Can Not Be Empty!");
+				}
+				else if(s.search(" ")==-1 || s.search(" ")==0)
+				{
+					alert("Name Must Be At Least Two words!");
+				}
+				else if(!(s[0].charCodeAt(0)>64 &&s[0].charCodeAt(0)<91 || s[0].charCodeAt(0)>96 &&s[0].charCodeAt(0)<123 ))
+				{
+					alert("Name Must Be Start With Letter!");
+				}
+				//document.write(s);
+				//alert(s);
+				//s="this is consote";
+				//console.log(s);
+			}
+		</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		Email<br>
+		<input type="email" id="email" name="email"><br><br>
+		<input type="submit" name="submit" onclick="emailValidation()">
+		<script>
+			function emailValidation()
+			{
+				let s=document.getElementById('email').value;
+				if(s=="")
+				{
+					alert("Email Can Not Be Empty!");
+				}
+			}
+		</script>
+	</form>
+</body>
+</html>
