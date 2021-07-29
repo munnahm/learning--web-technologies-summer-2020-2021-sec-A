@@ -4,7 +4,8 @@
 	<title></title>
 </head>
 <body>
-<table border="1">
+<form>
+	<table border="1">
 	<tr>
 		<th colspan="3">PERSON PROFAIL</th>
 	</tr>
@@ -39,7 +40,7 @@
 	<tr>
 		<td>Blood Group</td>
 		<td>
-			<select>
+			<select id="bg" value="">
 				<option id="b1">A+</option>
 				<option id="b2">A-</option>
 				<option id="b3">B+</option>
@@ -64,7 +65,7 @@
 	</tr>
 	<tr>
 		<td>Photo</td>
-		<td><input type="file" name="" id="p"></td>
+		<td><input type="file" name="file" id="p" accept="image/*"></td>
 		<td id="7"></td>
 	</tr>
 	<tr>
@@ -74,10 +75,13 @@
 		</td>
 	</tr>
 </table>
+</form>
 <script>
 	function Validation()
 	{
 		let s=document.getElementById('name').value;
+		//jhvljsahb;kcjnw;jnb;cjnbdq'weon'lsdn;ojn;kn
+		//console.log('hvuictvcjhd mckh,');
 		if(s=="")document.getElementById('1').innerHTML="Name must be filled!";
 		else document.getElementById('1').innerHTML="";
 
@@ -93,6 +97,14 @@
 		if(document.getElementById('d').value=="" || document.getElementById('m').value=="" || document.getElementById('y').value=="" )
 			document.getElementById('4').innerHTML="DOB must be filled!";
 		else document.getElementById('4').innerHTML="";
+
+		//document.getElementById('5').innerHTML=document.getElementById('bg').value;
+		
+		if(!document.getElementById('d1').checked && !document.getElementById('d2').checked && !document.getElementById('d3').checked && !document.getElementById('d4').checked)
+			document.getElementById('6').innerHTML="Degree information must be filled!";
+		else document.getElementById('6').innerHTML="";
+
+		document.getElementById('7').innerHTML=document.getElementById('p').accept;
 	}
 </script>
 </body>
