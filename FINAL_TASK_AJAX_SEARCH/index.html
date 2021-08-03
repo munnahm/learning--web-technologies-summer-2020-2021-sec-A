@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+	<fieldset>
+		<legend>SEARCH</legend>
+		<input type="text" id="t1" onkeypress ="action()"> 
+		<button>Search</button>
+		<div id="d1">
+			
+		</div>
+	</fieldset>
+	<script>
+		function action()
+		{
+			let data = document.getElementById('t1').value;
+			//console.log(data);
+			const http = new XMLHttpRequest();
+			http.open('POST', `server.php`, true);
+			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			http.send(`data=${data}`);
+			http.onreadystatechange = function(){
+
+				if(this.readyState == 4 && this.status == 200){
+					//document.getElementById('result').innerHTML = this.responseText;
+					//alert(this.responseText);
+					let data = JSON.parse(this.responseText);
+					document.getElementById('d1').innerHTML = data[0].email;
+					//console.log(data[0].email);
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>
