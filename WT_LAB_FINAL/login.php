@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form method="POST" action="">
+	<form method="POST" action="dashbord.php">
 		Username: <input type="text" name="username"><br><br>
 		Password: <input type="password" name="password"><br><br>
 		<input type="submit" name="login" value="login">
@@ -16,9 +16,9 @@
 	{
 		if($_POST['username']!='admin' && $_POST['password']!='admin')
 		{
-			
+			header('location: dashbord.php');
 		}
-		if($_POST['username']!='' && $_POST['password']!='')
+		else if($_POST['username']!='' && $_POST['password']!='')
 		{
 			session_start();
 			$conn=mysqli_connect('localhost','root','','webtech');
@@ -31,7 +31,7 @@
 			//echo mysqli_num_rows($s)."<br>";
 			if(mysqli_num_rows($result)>0)
 			{
-
+				header('location: dashbord.php');
 			}
 		}
 		else
